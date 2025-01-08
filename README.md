@@ -24,4 +24,4 @@ A highly skilled and dedicated professional with a Bachelor's degree in Electron
 ## Contact
 - **Phone**: +959798939984
 - **Email**: kyawzayhein528@gmail.com
-- **Address**: No. 748(A), Marga (7) Street, 12 Ward, Southokkalarpa Township, Yangon, Myanmar
+- **Address**: No. 1123(B), Aung Thu Kha (20) Street, 6 East Ward, Thaketa Township, Yangon, Myanmar
