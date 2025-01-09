@@ -1,15 +1,15 @@
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
-    background: linear-gradient(to right, #ece9e6, #ffffff);
-    color: #333;
+    background: #2c2c2c; /* Dark Background */
+    color: #e0e0e0; /* Light Grey Text */
 }
 
 header {
     text-align: center;
     padding: 20px;
-    background-color: #2c3e50;
-    color: white;
+    background-color: #4b3832; /* Brown */
+    color: #f7c567; /* Gold */
 }
 
 header h1 {
@@ -18,39 +18,46 @@ header h1 {
 }
 
 header p {
-    margin: 0;
-    font-size: 1rem;
+    margin: 5px 0;
+    font-size: 1.2rem;
     font-weight: 300;
 }
 
 .tabs {
     display: flex;
     justify-content: center;
-    background-color: #34495e;
+    background-color: #3c3c3c; /* Grey */
     padding: 10px;
 }
 
 .tabs button {
     background: none;
-    border: none;
-    color: white;
+    border: 1px solid #f7c567; /* Gold Border */
+    color: #e0e0e0;
     padding: 10px 20px;
+    margin: 5px;
     font-size: 1rem;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: background 0.3s, transform 0.3s;
 }
 
 .tabs button:hover {
-    background-color: #2c3e50;
+    background-color: #4b3832; /* Brown */
+    color: #f7c567; /* Gold */
+    transform: scale(1.05);
 }
 
 main {
     padding: 20px;
+    background-color: #1c1c1c; /* Darker Grey */
 }
 
 .tab-content {
     display: none;
-    animation: fadeIn 0.5s;
+    padding: 20px;
+    border: 1px solid #f7c567;
+    background: #2e2e2e; /* Dark Grey */
+    border-radius: 8px;
 }
 
 .tab-content.active {
@@ -60,7 +67,16 @@ main {
 footer {
     text-align: center;
     padding: 10px;
-    background-color: #2c3e50;
-    color: white;
+    background-color: #4b3832;
+    color: #f7c567;
     margin-top: 20px;
+}
+
+footer a {
+    color: #f7c567;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
 }
