@@ -1,28 +1,44 @@
 body {
     font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
 }
 
-.tabs, .sub-tabs {
+.greeting {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.container {
     display: flex;
-    margin-bottom: 10px;
+}
+
+.tabs {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
 }
 
 .tab-button, .sub-tab-button {
-    background-color: #f1f1f1;
-    border: none;
+    background-color: #8B4513; /* Brown */
+    color: white;
+    border: 1px solid #A9A9A9; /* Dark Grey */
     padding: 10px;
     cursor: pointer;
-    margin-right: 5px;
+    margin-bottom: 5px;
+    text-align: left;
 }
 
 .tab-button:hover, .sub-tab-button:hover {
-    background-color: #ddd;
+    background-color: #DAA520; /* Gold */
 }
 
 .tab-content, .sub-tab-content {
     display: none;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #A9A9A9; /* Dark Grey */
+    background-color: #fff;
+    flex-grow: 1;
 }
 
 .tab-content.active, .sub-tab-content.active {
