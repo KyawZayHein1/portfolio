@@ -9,6 +9,13 @@ body {
     margin-bottom: 20px;
 }
 
+.bordered {
+    border: 2px solid #A9A9A9; /* Dark Grey */
+    padding: 10px;
+    display: inline-block;
+    background-color: #f9f9f9;
+}
+
 .container {
     display: flex;
 }
@@ -30,10 +37,12 @@ body {
     cursor: pointer;
     margin-bottom: 5px;
     text-align: left;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 .tab-button:hover, .sub-tab-button:hover {
     background-color: #DAA520; /* Gold */
+    transform: scale(1.05);
 }
 
 .tab-content, .sub-tab-content {
@@ -42,8 +51,14 @@ body {
     border: 1px solid #A9A9A9; /* Dark Grey */
     background-color: #fff;
     flex-grow: 1;
+    animation: fadeIn 0.5s;
 }
 
 .tab-content.active, .sub-tab-content.active {
     display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
