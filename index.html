@@ -3,80 +3,203 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kyaw Zay Hein | Portfolio</title>
+    <title>Vertical Tabbed Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2e2e2e; /* Dark grey */
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .greeting {
+            text-align: center;
+            padding: 20px;
+            background-color: #3b3b3b; /* Darker grey */
+            border-bottom: 2px solid #8B4513; /* Brown */
+        }
+
+        .greeting h1 {
+            color: #DAA520; /* Gold */
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .tabs {
+            flex: 0 0 250px;
+            background-color: #3b3b3b; /* Dark grey */
+            padding: 10px;
+            border-right: 2px solid #8B4513; /* Brown */
+        }
+
+        .tab-button, .sub-tab-button {
+            display: block;
+            background-color: #8B4513; /* Brown */
+            color: #fff;
+            border: none;
+            padding: 10px;
+            margin: 5px 0;
+            text-align: left;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .tab-button:hover, .sub-tab-button:hover {
+            background-color: #DAA520; /* Gold */
+            transform: scale(1.05);
+        }
+
+        .tab-button.active, .sub-tab-button.active {
+            background-color: #DAA520; /* Gold */
+        }
+
+        .tab-content {
+            display: none;
+            flex: 1;
+            padding: 20px;
+            background-color: #4b4b4b; /* Darker grey */
+            animation: fadeIn 0.5s;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .sub-tabs {
+            margin-top: 10px;
+        }
+
+        .sub-tab-content {
+            display: none;
+            background-color: #5b5b5b; /* Slightly lighter grey */
+            padding: 15px;
+            margin-top: 10px;
+            border-left: 4px solid #DAA520; /* Gold */
+            animation: fadeIn 0.5s;
+        }
+
+        .sub-tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Kyaw Zay Hein</h1>
-        <p>Telecommunications Specialist | Deputy Manager</p>
-    </header>
-    <nav class="tabs">
-        <button onclick="openTab(event, 'AboutMe')"><i class="fas fa-user"></i> About Me</button>
-        <button onclick="openTab(event, 'Skills')"><i class="fas fa-tools"></i> Skills</button>
-        <button onclick="openTab(event, 'Education')"><i class="fas fa-graduation-cap"></i> Education</button>
-        <button onclick="openTab(event, 'Experience')"><i class="fas fa-briefcase"></i> Experience</button>
-        <button onclick="openTab(event, 'Contact')"><i class="fas fa-envelope"></i> Contact</button>
-    </nav>
-    <main>
-        <section id="AboutMe" class="tab-content active">
+    <div class="greeting">
+        <h1>Welcome to My Portfolio</h1>
+        <p>I am a seasoned telecommunications professional with 8 years of experience. Explore my skills, education, and professional journey below.</p>
+    </div>
+
+    <div class="container">
+        <div class="tabs">
+            <button class="tab-button" onclick="openTab(event, 'AboutMe')"><i class="fas fa-user"></i> About Me</button>
+            <button class="tab-button" onclick="openTab(event, 'Contact')"><i class="fas fa-envelope"></i> Contact</button>
+            <button class="tab-button" onclick="openTab(event, 'Skills')"><i class="fas fa-cogs"></i> Skills</button>
+            <button class="tab-button" onclick="openTab(event, 'Education')"><i class="fas fa-graduation-cap"></i> Education</button>
+            <button class="tab-button" onclick="openTab(event, 'Experiences')"><i class="fas fa-briefcase"></i> Experiences</button>
+        </div>
+
+        <div id="AboutMe" class="tab-content">
             <h2>About Me</h2>
-            <p>I am a seasoned telecommunications professional with 8 years of experience in network maintenance, troubleshooting, and advanced technical operations. My expertise spans cutting-edge technologies, team leadership, and seamless project execution. I thrive on optimizing network performance and delivering innovative solutions that drive business success. I am actively seeking opportunities to leverage my skills in a forward-thinking organization committed to excellence in telecommunications.</p>
-        </section>
-        <section id="Skills" class="tab-content">
+            <p>I am a seasoned telecommunications professional with 8 years of experience in network maintenance, troubleshooting, and technical operations. I am passionate about delivering innovative solutions in the telecommunications field.</p>
+        </div>
+
+        <div id="Contact" class="tab-content">
+            <h2>Contact</h2>
+            <p>Phone: +959798939984</p>
+            <p>Email: kyawzayhein528@gmail.com</p>
+            <p>Address: No. 1123 (5B), Aung Thu Kha (20) Street, 6/East Ward, Thaketa Township, Yangon, Myanmar</p>
+        </div>
+
+        <div id="Skills" class="tab-content">
             <h2>Skills</h2>
             <ul>
-                <li>Network Maintenance and Troubleshooting</li>
-                <li>Telecommunications Technologies: RAN/TRAN, DWDM, IP Transmission</li>
-                <li>NMS Server Operations</li>
-                <li>LSP Coordination and Management</li>
-                <li>Team Supervision and Coordination</li>
-                <li>Technical Operations Planning and Execution</li>
-                <li>Customer Relationship Management</li>
-                <li>Strong Problem-Solving and Decision-Making Abilities</li>
-                <li>Excellent Communication and Interpersonal Skills</li>
+                <li>Network maintenance and troubleshooting</li>
+                <li>Telecommunications technologies: RAN/TRAN, DWDM, IP Transmission</li>
+                <li>NMS server operations</li>
+                <li>Team supervision and coordination</li>
+                <li>Technical operations planning and execution</li>
             </ul>
-        </section>
-        <section id="Education" class="tab-content">
+        </div>
+
+        <div id="Education" class="tab-content">
             <h2>Education</h2>
             <p>Bachelor of Engineering (Electronic Communication Engineering), University of Technology (Yatanarpon Cyber City), 2015</p>
-        </section>
-        <section id="Experience" class="tab-content">
-            <h2>Experience</h2>
-            <div>
-                <h3>ERICSSON Myanmar Company Limited</h3>
-                <p>Field Service Operation Engineer (2015 - 2017)</p>
-                <p>Conducted corrective and preventive maintenance, resolving issues within a 3-hour SLA...</p>
+        </div>
 
-                <h3>TMH Public Holding Company Limited</h3>
-                <p>FO Transmission Engineer (2017 - 2018)</p>
-                <p>Utilized NMS server and third-party devices (e.g., Secure CRT, Telnet) for network control...</p>
-
-                <h3>MYTEL Telecom International Company Limited</h3>
-                <p>Operation Control Engineer (2018 - 2021)</p>
-                <p>Handled maintenance, emergency case handling, and new On Air sites planning...</p>
-
-                <h3>Horizon Telecom International Company Limited</h3>
-                <p>Operation Supervisor (2022 - 2022)</p>
-                <p>Monitored and troubleshooted International Gateway (IGW) traffic and DWDM Backbone network...</p>
-
-                <h3>Shwe Emperor Group of Company Limited</h3>
-                <p>FTTX Operation Manager (2022 - 2024)</p>
-                <p>Oversaw the planning, implementation, and maintenance of Fiber to the x (FTTx) network operations...</p>
+        <div id="Experiences" class="tab-content">
+            <h2>Experiences</h2>
+            <div class="sub-tabs">
+                <button class="sub-tab-button" onclick="openSubTab(event, 'Company1')">ERICSSON Myanmar</button>
+                <button class="sub-tab-button" onclick="openSubTab(event, 'Company2')">TMH Public Holding</button>
+                <button class="sub-tab-button" onclick="openSubTab(event, 'Company3')">MYTEL Telecom</button>
+                <button class="sub-tab-button" onclick="openSubTab(event, 'Company4')">Horizon Telecom</button>
+                <button class="sub-tab-button" onclick="openSubTab(event, 'Company5')">Shwe Emperor Group</button>
             </div>
-        </section>
-        <section id="Contact" class="tab-content">
-            <h2>Contact</h2>
-            <p><strong>Phone:</strong> +959798939984</p>
-            <p><strong>Email:</strong> kyawzayhein528@gmail.com</p>
-            <p><strong>Address:</strong> No.1123 (5B), Aung Thu Kha (20) Street, 6/East Ward, Thaketa Township, Yangon</p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 Kyaw Zay Hein | <a href="www.linkedin.com/in/kyaw-zay-hein" target="_blank">LinkedIn</a></p>
-    </footer>
-    <script src="scripts.js"></script>
+            <div id="Company1" class="sub-tab-content">
+                <h3>ERICSSON Myanmar</h3>
+                <p>Field Service Operation Engineer (2015 - 2017): Conducted maintenance and troubleshooting for over 115 sites, ensuring minimal downtime.</p>
+            </div>
+            <div id="Company2" class="sub-tab-content">
+                <h3>TMH Public Holding</h3>
+                <p>FO Transmission Engineer (2017 - 2018): Managed Huawei and ZTE DWDM systems, ensuring optimal network performance.</p>
+            </div>
+            <div id="Company3" class="sub-tab-content">
+                <h3>MYTEL Telecom</h3>
+                <p>Operation Control Engineer (2018 - 2021): Handled nationwide BTS site maintenance and planning.</p>
+            </div>
+            <div id="Company4" class="sub-tab-content">
+                <h3>Horizon Telecom</h3>
+                <p>Operation Supervisor (2022): Monitored International Gateway traffic and maintained the DWDM Backbone network.</p>
+            </div>
+            <div id="Company5" class="sub-tab-content">
+                <h3>Shwe Emperor Group</h3>
+                <p>FTTX Operation Manager (2022 - 2024): Led FTTx network operations, managing deployment and troubleshooting teams.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tabbuttons;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+            tabbuttons = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tabbuttons.length; i++) {
+                tabbuttons[i].classList.remove("active");
+            }
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+
+        function openSubTab(evt, subTabName) {
+            var i, subtabcontent, subtabbuttons;
+            subtabcontent = document.getElementsByClassName("sub-tab-content");
+            for (i = 0; i < subtabcontent.length; i++) {
+                subtabcontent[i].classList.remove("active");
+            }
+            subtabbuttons = document.getElementsByClassName("sub-tab-button");
+            for (i = 0; i < subtabbuttons.length; i++) {
+                subtabbuttons[i].classList.remove("active");
+            }
+            document.getElementById(subTabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelector(".tab-button").click();
+        });
+    </script>
 </body>
 </html>
