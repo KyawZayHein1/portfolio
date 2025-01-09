@@ -1,104 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertical Tabs Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2c2c2c;
+            color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .greeting {
+            text-align: center;
+            margin: 20px 0;
+            color: #f0e68c;
+        }
+
+        .greeting h1 {
+            border: 2px solid #8b4513;
+            padding: 10px;
+            display: inline-block;
+            background-color: #8b4513;
+            color: #f9f9f9;
+            text-transform: uppercase;
+        }
+
+        .greeting p {
+            margin: 10px auto;
+            max-width: 800px;
+            line-height: 1.6;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            height: 100vh;
+        }
+
+        .tabs {
+            display: flex;
+            flex-direction: column;
+            background-color: #8b4513;
+            padding: 10px;
+            min-width: 180px;
+            max-width: 180px;
+            overflow-y: auto;
+        }
+
+        .tab-button {
+            background-color: #8b4513;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            text-align: left;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .tab-button i {
+            font-size: 18px;
+        }
+
+        .tab-button:hover {
+            background-color: #daa520;
+        }
+
+        .tab-button.active {
+            background-color: #daa520;
+            color: #2c2c2c;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 20px;
+            flex-grow: 1;
+            background-color: #f9f9f9;
+            color: #333;
+            border: 1px solid #8b4513;
+            overflow-y: auto;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .sub-tabs {
+            display: flex;
+            flex-direction: column;
+            margin-top: 10px;
+        }
+
+        .sub-tab-button {
+            background-color: #8b4513;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s;
+            text-align: left;
+        }
+
+        .sub-tab-button:hover {
+            background-color: #daa520;
+        }
+
+        .sub-tab-content {
+            display: none;
+            padding: 10px;
+            background-color: #f9f9f9;
+            color: #333;
+            border: 1px solid #8b4513;
+            margin-top: 10px;
+        }
+
+        .sub-tab-content.active {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .tabs {
+                flex-direction: row;
+                overflow-x: auto;
+                max-width: 100%;
+                min-width: 100%;
+            }
+
+            .tab-button {
+                justify-content: center;
+            }
+
+            .tab-content {
+                flex-grow: 1;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>Kyaw Zay Hein</h1>
-      <p>Deputy Manager at MPT</p>
-      <p>Location: Yangon, Myanmar</p>
-    </header>
-    <nav>
-      <ul>
-        <li><a href="#" class="active" onclick="showTab('profile')">Profile</a></li>
-        <li><a href="#" onclick="showTab('experience')">Experience</a></li>
-        <li><a href="#" onclick="showTab('skills')">Skills</a></li>
-        <li><a href="#" onclick="showTab('education')">Education</a></li>
-      </ul>
-    </nav>
-    <section id="profile" class="tab-content active">
-      <h2>Profile</h2>
-      <p>Experienced in Telecommunications, currently a Deputy Manager at MPT, with responsibilities in sales, team management, and channel performance monitoring.</p>
-    </section>
-    <section id="experience" class="tab-content">
-      <h2>Experience</h2>
-      <div class="job">
-        <h3>Deputy Manager, MPT (Apr 2024 - Present)</h3>
-        <ul>
-          <li>Manage Door-to-Door (D2D) Sales Partners and ensure performance.</li>
-          <li>Monitor and ensure sales channels comply with KPIs.</li>
-          <li>Collaborate with Sales Planning, Marketing, and CTO teams for area launches and expansions.</li>
-          <li>Oversee training and management of shop channel sales.</li>
-          <li>Resolve complaints from sales agencies and manage on-ground reporting.</li>
-        </ul>
-      </div>
-      <div class="job">
-        <h3>Operations Manager, Shwe Emperor Group (May 2023 - Apr 2024)</h3>
-        <ul>
-          <li>Lead FTTH operations, manage network deployment and maintenance.</li>
-          <li>Optimize resource usage and collaborate with vendors and stakeholders.</li>
-          <li>Ensure regulatory compliance and manage budgets.</li>
-          <li>Develop and manage operational goals and metrics.</li>
-        </ul>
-      </div>
-      <div class="job">
-        <h3>LSP Management Team Supervisor, Horizon Telecom (Feb 2022 - Oct 2022)</h3>
-        <ul>
-          <li>Control installation and maintenance tasks across teams.</li>
-          <li>Monitor equipment and site preparation for installations.</li>
-          <li>Collaborate with team leaders to resolve complaints and optimize sales and technician coordination.</li>
-        </ul>
-      </div>
-      <div class="job">
-        <h3>Network Operations Center Team Leader, Golden TMH Telecom (Nov 2021 - Feb 2022)</h3>
-        <ul>
-          <li>Monitor and troubleshoot International Gateway (IGW) traffic.</li>
-          <li>Collaborate with Hong Kong NOC for service management and maintenance.</li>
-        </ul>
-      </div>
-      <div class="job">
-        <h3>Field Operation Engineer, MYtel (Dec 2020 - May 2021)</h3>
-        <ul>
-          <li>Handle maintenance, emergency case handling, and new On-Air sites planning for BTS sites.</li>
-        </ul>
-      </div>
-      <div class="job">
-        <h3>Transmission and Datacom Front Office Engineer, Huawei (Aug 2017 - Jun 2018)</h3>
-        <ul>
-          <li>Manage DWDM, ZTE, RTN, and IP Transmission technologies.</li>
-          <li>Oversee LSPs for link restoration and support troubleshooting efforts.</li>
-        </ul>
-      </div>
-      <div class="job">
-        <h3>Field Service Operation Engineer, Ericsson (Jan 2015 - Sep 2017)</h3>
-        <ul>
-          <li>Conduct maintenance, resolve site alarms, and ensure network operations.</li>
-          <li>Manage and supervise over 115 sites across multiple townships.</li>
-        </ul>
-      </div>
-    </section>
-    <section id="skills" class="tab-content">
-      <h2>Skills</h2>
-      <ul>
-        <li>Telecommunications Systems</li>
-        <li>Data Center Management</li>
-        <li>Network Troubleshooting</li>
-        <li>Sales and Channel Performance Management</li>
-        <li>Team Leadership and Training</li>
-        <li>Budget and Cost Management</li>
-        <li>Regulatory Compliance</li>
-      </ul>
-    </section>
-    <section id="education" class="tab-content">
-      <h2>Education</h2>
-      <p>Bachelor's Degree in Telecommunications (or equivalent) - [Institution Name]</p>
-    </section>
-  </div>
-  <script src="script.js"></script>
+    <div class="greeting">
+        <h1>WELCOME TO MY PORTFOLIO</h1>
+        <p>Hello! I'm Kyaw Zay Hein, a professional with 8 years of experience in the telecommunications industry. I specialize in network operations, troubleshooting, and team coordination, contributing to the success of innovative projects.</p>
+    </div>
+    <div class="container">
+        <div class="tabs">
+            <button class="tab-button" onclick="openTab(event, 'AboutMe')"><i class="fas fa-user"></i>About Me</button>
+            <button class="tab-button" onclick="openTab(event, 'Contact')"><i class="fas fa-envelope"></i>Contact</button>
+            <button class="tab-button" onclick="openTab(event, 'Skills')"><i class="fas fa-tools"></i>Skills</button>
+            <button class="tab-button" onclick="openTab(event, 'Education')"><i class="fas fa-graduation-cap"></i>Education</button>
+            <button class="tab-button" onclick="openTab(event, 'Experiences')"><i class="fas fa-briefcase"></i>Experiences</button>
+        </div>
+
+        <div id="AboutMe" class="tab-content">
+            <h2>About Me</h2>
+            <p>I bring extensive experience in network maintenance, troubleshooting, and operational excellence within the telecommunications industry.</p>
+        </div>
+
+        <div id="Contact" class="tab-content">
+            <h2>Contact</h2>
+            <p>Phone: +959798939984</p>
+            <p>Email: kyawzayhein528@gmail.com</p>
+            <p>Address: No. 1123 (5B), Aung Thu Kha (20) Street, 6/East Ward, Thaketa Township, Yangon</p>
+        </div>
+
+        <div id="Skills" class="tab-content">
+            <h2>Skills</h2>
+            <ul>
+                <li>Network maintenance and troubleshooting</li>
+                <li>Telecommunications technologies: RAN/TRAN, DWDM, IP Transmission</li>
+                <li>Team supervision and coordination</li>
+                <li>Technical operations planning and execution</li>
+            </ul>
+        </div>
+
+        <div id="Education" class="tab-content">
+            <h2>Education</h2>
+            <p>Bachelor of Engineering (Electronic Communication Engineering), University of Technology (Yatanarpon Cyber City), 2015</p>
+        </div>
+
+        <div id="Experiences" class="tab-content">
+            <h2>Experiences</h2>
+            <div class="sub-tabs">
+                <button class="sub-tab-button" onclick="openSubTab(event, 'Company1')"><i class="fas fa-building"></i>ERICSSON Myanmar Company Limited</button>
+                <button class="sub-tab-button" onclick="openSubTab(event, 'Company2')"><i class="fas fa-network-wired"></i>TMH Public Holding Company Limited</button>
+                <button class="sub-tab-button" onclick="openSubTab(event, 'Company3')"><i class="fas fa-globe"></i>MYTEL Telecom International Company Limited</button>
+            </div>
+            <div id="Company1" class="sub-tab-content">
+                <h3>ERICSSON Myanmar Company Limited</h3>
+                <p>Field Service Operation Engineer (2015 - 2017)</p>
+            </div>
+            <div id="Company2" class="sub-tab-content">
+                <h3>TMH Public Holding Company Limited</h3>
+                <p>FO Transmission Engineer (2017 - 2018)</p>
+            </div>
+            <div id="Company3" class="sub-tab-content">
+                <h3>MYTEL Telecom International Company Limited</h3>
+                <p>Operation Control Engineer (2018 - 2021)</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tabbuttons;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+            tabbuttons = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tabbuttons.length; i++) {
+                tabbuttons[i].classList.remove("active");
+            }
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+
+        function openSubTab(evt, subTabName) {
+            var i, subtabcontent, subtabbuttons;
+            subtabcontent = document.getElementsByClassName("sub-tab-content");
+            for (i = 0; i < subtabcontent.length; i++) {
+                subtabcontent[i].classList.remove("active");
+            }
+            subtabbuttons = document.getElementsByClassName("sub-tab-button");
+            for (i = 0; i < subtabbuttons.length; i++) {
+                subtabbuttons[i].classList.remove("active");
+            }
+            document.getElementById(subTabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelector(".tab-button").click();
+        });
+    </script>
 </body>
 </html>
