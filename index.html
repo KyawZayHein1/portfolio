@@ -3,177 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vertical Tabs Portfolio</title>
+    <title>Tabbed Navigation</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #2c2c2c;
-            color: #f9f9f9;
-            margin: 0;
-            padding: 0;
-        }
-
-        .greeting {
-            text-align: center;
-            margin: 20px 0;
-            color: #f0e68c;
-        }
-
-        .greeting h1 {
-            border: 2px solid #8b4513;
-            padding: 10px;
-            display: inline-block;
-            background-color: #8b4513;
-            color: #f9f9f9;
-            text-transform: uppercase;
-        }
-
-        .greeting p {
-            margin: 10px auto;
-            max-width: 800px;
-            line-height: 1.6;
-        }
-
-        .container {
-            display: flex;
-            flex-direction: row;
-            height: 100vh;
-        }
-
-        .tabs {
-            display: flex;
-            flex-direction: column;
-            background-color: #8b4513;
-            padding: 10px;
-            min-width: 180px;
-            max-width: 180px;
-            overflow-y: auto;
-        }
-
-        .tab-button {
-            background-color: #8b4513;
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            text-align: left;
-            font-size: 16px;
-            transition: background-color 0.3s, transform 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            width: 100%;
-            box-sizing: border-box;
-        }
-
-        .tab-button i {
-            font-size: 18px;
-        }
-
-        .tab-button:hover {
-            background-color: #daa520;
-        }
-
-        .tab-button.active {
-            background-color: #daa520;
-            color: #2c2c2c;
-        }
-
-        .tab-content {
-            display: none;
-            padding: 20px;
-            flex-grow: 1;
-            background-color: #f9f9f9;
-            color: #333;
-            border: 1px solid #8b4513;
-            overflow-y: auto;
-        }
-
-        .tab-content.active {
-            display: block;
-        }
-
-        .sub-tabs {
-            display: flex;
-            flex-direction: column;
-            margin-top: 10px;
-        }
-
-        .sub-tab-button {
-            background-color: #8b4513;
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            font-size: 14px;
-            transition: background-color 0.3s;
-            text-align: left;
-        }
-
-        .sub-tab-button:hover {
-            background-color: #daa520;
-        }
-
-        .sub-tab-content {
-            display: none;
-            padding: 10px;
-            background-color: #f9f9f9;
-            color: #333;
-            border: 1px solid #8b4513;
-            margin-top: 10px;
-        }
-
-        .sub-tab-content.active {
-            display: block;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-            }
-
-            .tabs {
-                flex-direction: row;
-                overflow-x: auto;
-                max-width: 100%;
-                min-width: 100%;
-            }
-
-            .tab-button {
-                justify-content: center;
-            }
-
-            .tab-content {
-                flex-grow: 1;
-            }
-        }
-    </style>
 </head>
 <body>
     <div class="greeting">
-        <h1>WELCOME TO MY PORTFOLIO</h1>
-        <p>Hello! I'm Kyaw Zay Hein, a professional with 8 years of experience in the telecommunications industry. I specialize in network operations, troubleshooting, and team coordination, contributing to the success of innovative projects.</p>
+        <h1 class="bordered">Welcome to My Portfolio</h1>
+        <p>Hello! I'm Kyaw Zay Hein, a highly skilled and dedicated professional with a Bachelor's degree in Electronic Communication Engineering. I have extensive experience in the telecommunications industry and am seeking a challenging role as an Operation Manager to utilize my expertise in network maintenance, troubleshooting, and team coordination to contribute to the success of a dynamic organization.</p>
     </div>
     <div class="container">
         <div class="tabs">
-            <button class="tab-button" onclick="openTab(event, 'AboutMe')"><i class="fas fa-user"></i>About Me</button>
-            <button class="tab-button" onclick="openTab(event, 'Contact')"><i class="fas fa-envelope"></i>Contact</button>
-            <button class="tab-button" onclick="openTab(event, 'Skills')"><i class="fas fa-tools"></i>Skills</button>
-            <button class="tab-button" onclick="openTab(event, 'Education')"><i class="fas fa-graduation-cap"></i>Education</button>
-            <button class="tab-button" onclick="openTab(event, 'Experiences')"><i class="fas fa-briefcase"></i>Experiences</button>
+            <button class="tab-button" onclick="openTab(event, 'AboutMe')"><i class="fas fa-user"></i> About Me</button>
+            <button class="tab-button" onclick="openTab(event, 'Contact')"><i class="fas fa-envelope"></i> Contact</button>
+            <button class="tab-button" onclick="openTab(event, 'Skills')"><i class="fas fa-cogs"></i> Skills</button>
+            <button class="tab-button" onclick="openTab(event, 'Education')"><i class="fas fa-graduation-cap"></i> Education</button>
+            <button class="tab-button" onclick="openTab(event, 'Experiences')"><i class="fas fa-briefcase"></i> Experiences</button>
         </div>
 
         <div id="AboutMe" class="tab-content">
             <h2>About Me</h2>
-            <p>I bring extensive experience in network maintenance, troubleshooting, and operational excellence within the telecommunications industry.</p>
+            <p>A highly skilled and dedicated professional with a Bachelor's degree in Electronic Communication Engineering, offering extensive experience in the telecommunications industry. Seeking a challenging role as Operation Manager to utilize my expertise in network maintenance, troubleshooting, and team coordination to contribute to the success of a dynamic organization.</p>
         </div>
 
         <div id="Contact" class="tab-content">
             <h2>Contact</h2>
             <p>Phone: +959798939984</p>
             <p>Email: kyawzayhein528@gmail.com</p>
-            <p>Address: No. 1123 (5B), Aung Thu Kha (20) Street, 6/East Ward, Thaketa Township, Yangon</p>
+            <p>Address: No. 748(A), Marga (7) Street, 12 Ward, Southokkalarpa Township, Yangon, Myanmar</p>
         </div>
 
         <div id="Skills" class="tab-content">
@@ -181,8 +38,13 @@
             <ul>
                 <li>Network maintenance and troubleshooting</li>
                 <li>Telecommunications technologies: RAN/TRAN, DWDM, IP Transmission</li>
+                <li>NMS server operations</li>
+                <li>LSP coordination and management</li>
                 <li>Team supervision and coordination</li>
                 <li>Technical operations planning and execution</li>
+                <li>Customer relationship management</li>
+                <li>Strong problem-solving and decision-making abilities</li>
+                <li>Excellent communication and interpersonal skills</li>
             </ul>
         </div>
 
@@ -194,57 +56,40 @@
         <div id="Experiences" class="tab-content">
             <h2>Experiences</h2>
             <div class="sub-tabs">
-                <button class="sub-tab-button" onclick="openSubTab(event, 'Company1')"><i class="fas fa-building"></i>ERICSSON Myanmar Company Limited</button>
-                <button class="sub-tab-button" onclick="openSubTab(event, 'Company2')"><i class="fas fa-network-wired"></i>TMH Public Holding Company Limited</button>
-                <button class="sub-tab-button" onclick="openSubTab(event, 'Company3')"><i class="fas fa-globe"></i>MYTEL Telecom International Company Limited</button>
+                <button class="sub-tab-button" onclick="openSubTab(event, 'Company1')">ERICSSON Myanmar Company Limited</button>
+                <button class="sub-tab-button" onclick="openSubTab(event, 'Company2')">TMH Public Holding Company Limited</button>
+                <button class="sub-tab-button" onclick="openSubTab(event, 'Company3')">MYTEL Telecom International Company Limited</button>
+                <button class="sub-tab-button" onclick="openSubTab(event, 'Company4')">Horizon Telecom International Company Limited</button>
+                <button class="sub-tab-button" onclick="openSubTab(event, 'Company5')">Shwe Emperor Group of Company Limited</button>
             </div>
             <div id="Company1" class="sub-tab-content">
                 <h3>ERICSSON Myanmar Company Limited</h3>
                 <p>Field Service Operation Engineer (2015 - 2017)</p>
+                <p>Conducted corrective and preventive maintenance, resolving issues within a 3-hour SLA. Troubleshot and resolved site alarms and downtime, ensuring uninterrupted network operations. Performed regular device maintenance, including air-filter cleaning, cable repair, and inspections. Managed and supervised 115 sites across multiple townships.</p>
             </div>
             <div id="Company2" class="sub-tab-content">
                 <h3>TMH Public Holding Company Limited</h3>
                 <p>FO Transmission Engineer (2017 - 2018)</p>
+                <p>Utilized NMS server and third-party devices (e.g., Secure CRT, Telnet) for network control and configuration. Managed Huawei DWDM, ZTE DWDM, RTN, and IP Transmission technologies. Oversaw LSPs for transmission link restoration within SLA. Provided troubleshooting and support for fixed access network and collaborated with onsite engineers and monitoring teams.</p>
             </div>
             <div id="Company3" class="sub-tab-content">
                 <h3>MYTEL Telecom International Company Limited</h3>
                 <p>Operation Control Engineer (2018 - 2021)</p>
+                <p>Handled maintenance, emergency case handling, and new On Air sites planning. Managed all BTS sites nationwide, ensuring compliance with SLA requirements. Coordinated with LSPs and field teams for On Air sites, covering transmission, power, and radio aspects.</p>
+            </div>
+            <div id="Company4" class="sub-tab-content">
+                <h3>Horizon Telecom International Company Limited</h3>
+                <p>Operation Supervisor (2022 - 2022)</p>
+                <p>Monitored and troubleshooted International Gateway (IGW) traffic and DWDM Backbone network. Collaborated with Hong Kong NOC for Metro DIA, IPVPN, and DIA services to banking and hotel clients. Conducted maintenance for the Data Center at Ngwe Saung Landing Station of MPT.</p>
+            </div>
+            <div id="Company5" class="sub-tab-content">
+                <h3>Shwe Emperor Group of Company Limited</h3>
+                <p>FTTX Operation Manager (2022 - 2024)</p>
+                <p>Oversee the planning, implementation, and maintenance of Fiber to the x (FTTx) network operations. Manage a team of technicians and field engineers responsible for FTTx deployment, maintenance, and troubleshooting. Coordinate with cross-functional teams including engineering, construction, and customer service to ensure seamless execution of FTTx projects. Develop and implement operational strategies to optimize network performance, reliability, and scalability. Monitor network KPIs, analyze performance data, and implement corrective actions to meet service level agreements (SLAs) and quality standards. Ensure compliance with regulatory requirements, safety standards, and industry best practices in FTTx operations. Conduct regular site inspections, audits, and assessments to identify areas for improvement and address any issues promptly. Provide technical guidance and support to field teams, including training programs and resource allocation. Collaborate with vendors, contractors, and suppliers to procure materials, equipment, and services necessary for FTTx projects. Prepare reports, presentations, and documentation to communicate project status, performance metrics, and recommendations to senior management.</p>
             </div>
         </div>
     </div>
 
-    <script>
-        function openTab(evt, tabName) {
-            var i, tabcontent, tabbuttons;
-            tabcontent = document.getElementsByClassName("tab-content");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].classList.remove("active");
-            }
-            tabbuttons = document.getElementsByClassName("tab-button");
-            for (i = 0; i < tabbuttons.length; i++) {
-                tabbuttons[i].classList.remove("active");
-            }
-            document.getElementById(tabName).classList.add("active");
-            evt.currentTarget.classList.add("active");
-        }
-
-        function openSubTab(evt, subTabName) {
-            var i, subtabcontent, subtabbuttons;
-            subtabcontent = document.getElementsByClassName("sub-tab-content");
-            for (i = 0; i < subtabcontent.length; i++) {
-                subtabcontent[i].classList.remove("active");
-            }
-            subtabbuttons = document.getElementsByClassName("sub-tab-button");
-            for (i = 0; i < subtabbuttons.length; i++) {
-                subtabbuttons[i].classList.remove("active");
-            }
-            document.getElementById(subTabName).classList.add("active");
-            evt.currentTarget.classList.add("active");
-        }
-
-        document.addEventListener("DOMContentLoaded", function () {
-            document.querySelector(".tab-button").click();
-        });
-    </script>
+    <script src="scripts.js"></script>
 </body>
 </html>
