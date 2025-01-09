@@ -45,8 +45,8 @@
             flex-direction: column;
             background-color: #8b4513;
             padding: 10px;
-            min-width: 200px;
-            max-width: 200px;
+            min-width: 220px;
+            max-width: 220px;
         }
 
         .tab-button {
@@ -55,10 +55,17 @@
             border: 1px solid #f9f9f9;
             padding: 10px;
             cursor: pointer;
-            text-align: center;
+            text-align: left;
             font-size: 16px;
             transition: background-color 0.3s, transform 0.3s;
             width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .tab-button i {
+            font-size: 18px;
         }
 
         .tab-button:hover {
@@ -97,7 +104,7 @@
             cursor: pointer;
             font-size: 14px;
             transition: background-color 0.3s;
-            text-align: center;
+            text-align: left;
         }
 
         .sub-tab-button:hover {
@@ -125,11 +132,11 @@
     </div>
     <div class="container">
         <div class="tabs">
-            <button class="tab-button" onclick="openTab(event, 'AboutMe')">About Me</button>
-            <button class="tab-button" onclick="openTab(event, 'Contact')">Contact</button>
-            <button class="tab-button" onclick="openTab(event, 'Skills')">Skills</button>
-            <button class="tab-button" onclick="openTab(event, 'Education')">Education</button>
-            <button class="tab-button" onclick="openTab(event, 'Experiences')">Experiences</button>
+            <button class="tab-button" onclick="openTab(event, 'AboutMe')"><i class="fas fa-user"></i>About Me</button>
+            <button class="tab-button" onclick="openTab(event, 'Contact')"><i class="fas fa-envelope"></i>Contact</button>
+            <button class="tab-button" onclick="openTab(event, 'Skills')"><i class="fas fa-tools"></i>Skills</button>
+            <button class="tab-button" onclick="openTab(event, 'Education')"><i class="fas fa-graduation-cap"></i>Education</button>
+            <button class="tab-button" onclick="openTab(event, 'Experiences')"><i class="fas fa-briefcase"></i>Experiences</button>
         </div>
 
         <div id="AboutMe" class="tab-content">
@@ -162,9 +169,9 @@
         <div id="Experiences" class="tab-content">
             <h2>Experiences</h2>
             <div class="sub-tabs">
-                <button class="sub-tab-button" onclick="openSubTab(event, 'Company1')">ERICSSON Myanmar Company Limited</button>
-                <button class="sub-tab-button" onclick="openSubTab(event, 'Company2')">TMH Public Holding Company Limited</button>
-                <button class="sub-tab-button" onclick="openSubTab(event, 'Company3')">MYTEL Telecom International Company Limited</button>
+                <button class="sub-tab-button" onclick="openSubTab(event, 'Company1')"><i class="fas fa-building"></i>ERICSSON Myanmar Company Limited</button>
+                <button class="sub-tab-button" onclick="openSubTab(event, 'Company2')"><i class="fas fa-network-wired"></i>TMH Public Holding Company Limited</button>
+                <button class="sub-tab-button" onclick="openSubTab(event, 'Company3')"><i class="fas fa-globe"></i>MYTEL Telecom International Company Limited</button>
             </div>
             <div id="Company1" class="sub-tab-content">
                 <h3>ERICSSON Myanmar Company Limited</h3>
