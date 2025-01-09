@@ -25,3 +25,8 @@ function openSubTab(evt, subTabName) {
     document.getElementById(subTabName).style.display = "block";
     evt.currentTarget.className += " active";
 }
+
+// Set default tab to be open
+document.addEventListener("DOMContentLoaded", function() {
+    document.querySelector(".tab-button").click();
+});
