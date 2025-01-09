@@ -3,67 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vertical Tabbed Portfolio</title>
+    <title>Vertical Tabs Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #2e2e2e; /* Dark grey */
-            color: #fff;
+            background-color: #2c2c2c;
+            color: #f9f9f9;
             margin: 0;
             padding: 0;
         }
 
         .greeting {
             text-align: center;
-            padding: 20px;
-            background-color: #3b3b3b; /* Darker grey */
-            border-bottom: 2px solid #8B4513; /* Brown */
+            margin: 20px 0;
+            color: #f0e68c;
         }
 
         .greeting h1 {
-            color: #DAA520; /* Gold */
-            margin: 0;
+            border: 2px solid #8b4513;
+            padding: 10px;
+            display: inline-block;
+            background-color: #8b4513;
+            color: #f9f9f9;
+            text-transform: uppercase;
+        }
+
+        .greeting p {
+            margin: 10px auto;
+            max-width: 800px;
+            line-height: 1.6;
         }
 
         .container {
             display: flex;
+            flex-direction: row;
         }
 
         .tabs {
-            flex: 0 0 250px;
-            background-color: #3b3b3b; /* Dark grey */
+            display: flex;
+            flex-direction: column;
+            background-color: #8b4513;
             padding: 10px;
-            border-right: 2px solid #8B4513; /* Brown */
+            min-width: 200px;
+            max-width: 200px;
         }
 
-        .tab-button, .sub-tab-button {
-            display: block;
-            background-color: #8B4513; /* Brown */
-            color: #fff;
-            border: none;
+        .tab-button {
+            background-color: #8b4513;
+            color: white;
+            border: 1px solid #f9f9f9;
             padding: 10px;
-            margin: 5px 0;
-            text-align: left;
             cursor: pointer;
-            transition: background-color 0.3s, transform 0.2s;
+            text-align: center;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.3s;
+            width: 100%;
         }
 
-        .tab-button:hover, .sub-tab-button:hover {
-            background-color: #DAA520; /* Gold */
-            transform: scale(1.05);
+        .tab-button:hover {
+            background-color: #daa520;
         }
 
-        .tab-button.active, .sub-tab-button.active {
-            background-color: #DAA520; /* Gold */
+        .tab-button.active {
+            background-color: #daa520;
+            color: #2c2c2c;
         }
 
         .tab-content {
             display: none;
-            flex: 1;
             padding: 20px;
-            background-color: #4b4b4b; /* Darker grey */
-            animation: fadeIn 0.5s;
+            flex-grow: 1;
+            background-color: #f9f9f9;
+            color: #333;
+            border: 1px solid #8b4513;
         }
 
         .tab-content.active {
@@ -71,53 +84,64 @@
         }
 
         .sub-tabs {
+            display: flex;
+            flex-direction: column;
             margin-top: 10px;
+        }
+
+        .sub-tab-button {
+            background-color: #8b4513;
+            color: white;
+            border: 1px solid #f9f9f9;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s;
+            text-align: center;
+        }
+
+        .sub-tab-button:hover {
+            background-color: #daa520;
         }
 
         .sub-tab-content {
             display: none;
-            background-color: #5b5b5b; /* Slightly lighter grey */
-            padding: 15px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            color: #333;
+            border: 1px solid #8b4513;
             margin-top: 10px;
-            border-left: 4px solid #DAA520; /* Gold */
-            animation: fadeIn 0.5s;
         }
 
         .sub-tab-content.active {
             display: block;
         }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
     </style>
 </head>
 <body>
     <div class="greeting">
-        <h1>Welcome to My Portfolio</h1>
-        <p>I am a seasoned telecommunications professional with 8 years of experience. Explore my skills, education, and professional journey below.</p>
+        <h1>WELCOME TO MY PORTFOLIO</h1>
+        <p>Hello! I'm Kyaw Zay Hein, a professional with 8 years of experience in the telecommunications industry. I specialize in network operations, troubleshooting, and team coordination, contributing to the success of innovative projects.</p>
     </div>
-
     <div class="container">
         <div class="tabs">
-            <button class="tab-button" onclick="openTab(event, 'AboutMe')"><i class="fas fa-user"></i> About Me</button>
-            <button class="tab-button" onclick="openTab(event, 'Contact')"><i class="fas fa-envelope"></i> Contact</button>
-            <button class="tab-button" onclick="openTab(event, 'Skills')"><i class="fas fa-cogs"></i> Skills</button>
-            <button class="tab-button" onclick="openTab(event, 'Education')"><i class="fas fa-graduation-cap"></i> Education</button>
-            <button class="tab-button" onclick="openTab(event, 'Experiences')"><i class="fas fa-briefcase"></i> Experiences</button>
+            <button class="tab-button" onclick="openTab(event, 'AboutMe')">About Me</button>
+            <button class="tab-button" onclick="openTab(event, 'Contact')">Contact</button>
+            <button class="tab-button" onclick="openTab(event, 'Skills')">Skills</button>
+            <button class="tab-button" onclick="openTab(event, 'Education')">Education</button>
+            <button class="tab-button" onclick="openTab(event, 'Experiences')">Experiences</button>
         </div>
 
         <div id="AboutMe" class="tab-content">
             <h2>About Me</h2>
-            <p>I am a seasoned telecommunications professional with 8 years of experience in network maintenance, troubleshooting, and technical operations. I am passionate about delivering innovative solutions in the telecommunications field.</p>
+            <p>I bring extensive experience in network maintenance, troubleshooting, and operational excellence within the telecommunications industry.</p>
         </div>
 
         <div id="Contact" class="tab-content">
             <h2>Contact</h2>
             <p>Phone: +959798939984</p>
             <p>Email: kyawzayhein528@gmail.com</p>
-            <p>Address: No. 1123 (5B), Aung Thu Kha (20) Street, 6/East Ward, Thaketa Township, Yangon, Myanmar</p>
+            <p>Address: No. 1123 (5B), Aung Thu Kha (20) Street, 6/East Ward, Thaketa Township, Yangon</p>
         </div>
 
         <div id="Skills" class="tab-content">
@@ -125,7 +149,6 @@
             <ul>
                 <li>Network maintenance and troubleshooting</li>
                 <li>Telecommunications technologies: RAN/TRAN, DWDM, IP Transmission</li>
-                <li>NMS server operations</li>
                 <li>Team supervision and coordination</li>
                 <li>Technical operations planning and execution</li>
             </ul>
@@ -139,31 +162,21 @@
         <div id="Experiences" class="tab-content">
             <h2>Experiences</h2>
             <div class="sub-tabs">
-                <button class="sub-tab-button" onclick="openSubTab(event, 'Company1')">ERICSSON Myanmar</button>
-                <button class="sub-tab-button" onclick="openSubTab(event, 'Company2')">TMH Public Holding</button>
-                <button class="sub-tab-button" onclick="openSubTab(event, 'Company3')">MYTEL Telecom</button>
-                <button class="sub-tab-button" onclick="openSubTab(event, 'Company4')">Horizon Telecom</button>
-                <button class="sub-tab-button" onclick="openSubTab(event, 'Company5')">Shwe Emperor Group</button>
+                <button class="sub-tab-button" onclick="openSubTab(event, 'Company1')">ERICSSON Myanmar Company Limited</button>
+                <button class="sub-tab-button" onclick="openSubTab(event, 'Company2')">TMH Public Holding Company Limited</button>
+                <button class="sub-tab-button" onclick="openSubTab(event, 'Company3')">MYTEL Telecom International Company Limited</button>
             </div>
             <div id="Company1" class="sub-tab-content">
-                <h3>ERICSSON Myanmar</h3>
-                <p>Field Service Operation Engineer (2015 - 2017): Conducted maintenance and troubleshooting for over 115 sites, ensuring minimal downtime.</p>
+                <h3>ERICSSON Myanmar Company Limited</h3>
+                <p>Field Service Operation Engineer (2015 - 2017)</p>
             </div>
             <div id="Company2" class="sub-tab-content">
-                <h3>TMH Public Holding</h3>
-                <p>FO Transmission Engineer (2017 - 2018): Managed Huawei and ZTE DWDM systems, ensuring optimal network performance.</p>
+                <h3>TMH Public Holding Company Limited</h3>
+                <p>FO Transmission Engineer (2017 - 2018)</p>
             </div>
             <div id="Company3" class="sub-tab-content">
-                <h3>MYTEL Telecom</h3>
-                <p>Operation Control Engineer (2018 - 2021): Handled nationwide BTS site maintenance and planning.</p>
-            </div>
-            <div id="Company4" class="sub-tab-content">
-                <h3>Horizon Telecom</h3>
-                <p>Operation Supervisor (2022): Monitored International Gateway traffic and maintained the DWDM Backbone network.</p>
-            </div>
-            <div id="Company5" class="sub-tab-content">
-                <h3>Shwe Emperor Group</h3>
-                <p>FTTX Operation Manager (2022 - 2024): Led FTTx network operations, managing deployment and troubleshooting teams.</p>
+                <h3>MYTEL Telecom International Company Limited</h3>
+                <p>Operation Control Engineer (2018 - 2021)</p>
             </div>
         </div>
     </div>
@@ -197,7 +210,7 @@
             evt.currentTarget.classList.add("active");
         }
 
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             document.querySelector(".tab-button").click();
         });
     </script>
