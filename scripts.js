@@ -1,32 +1,41 @@
+// Function to open a tab
 function openTab(evt, tabName) {
-  var i, tabcontent, tabbuttons;
-  tabcontent = document.getElementsByClassName("tab-content");
-  for (i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].style.display = "none";
-  }
-  tabbuttons = document.getElementsByClassName("tab-button");
-  for (i = 0; i < tabbuttons.length; i++) {
-      tabbuttons[i].className = tabbuttons[i].className.replace(" active", "");
-  }
+  // Hide all tab contents
+  document.querySelectorAll(".tab-content").forEach((tab) => {
+    tab.style.display = "none";
+  });
+
+  // Remove the "active" class from all tab buttons
+  document.querySelectorAll(".tab-button").forEach((button) => {
+    button.classList.remove("active");
+  });
+
+  // Display the selected tab and mark the button as active
   document.getElementById(tabName).style.display = "block";
-  evt.currentTarget.className += " active";
+  evt.currentTarget.classList.add("active");
 }
 
+// Function to open a sub-tab
 function openSubTab(evt, subTabName) {
-  var i, subtabcontent, subtabbuttons;
-  subtabcontent = document.getElementsByClassName("sub-tab-content");
-  for (i = 0; i < subtabcontent.length; i++) {
-      subtabcontent[i].style.display = "none";
-  }
-  subtabbuttons = document.getElementsByClassName("sub-tab-button");
-  for (i = 0; i < subtabbuttons.length; i++) {
-      subtabbuttons[i].className = subtabbuttons[i].className.replace(" active", "");
-  }
+  // Hide all sub-tab contents
+  document.querySelectorAll(".sub-tab-content").forEach((subTab) => {
+    subTab.style.display = "none";
+  });
+
+  // Remove the "active" class from all sub-tab buttons
+  document.querySelectorAll(".sub-tab-button").forEach((button) => {
+    button.classList.remove("active");
+  });
+
+  // Display the selected sub-tab and mark the button as active
   document.getElementById(subTabName).style.display = "block";
-  evt.currentTarget.className += " active";
+  evt.currentTarget.classList.add("active");
 }
 
-// Set default tab to be open
-document.addEventListener("DOMContentLoaded", function() {
-  document.querySelector(".tab-button").click();
+// Automatically set the default tab to open when the page loads
+document.addEventListener("DOMContentLoaded", () => {
+  const defaultTab = document.querySelector(".tab-button");
+  if (defaultTab) {
+    defaultTab.click();
+  }
 });
