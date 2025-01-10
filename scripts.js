@@ -1,32 +1,39 @@
 function openTab(evt, tabName) {
-  var i, tabcontent, tabbuttons;
-  tabcontent = document.getElementsByClassName("tab-content");
-  for (i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].style.display = "none";
+  var i, tabContent, tabButtons;
+
+  // Hide all tab content
+  tabContent = document.getElementsByClassName("tab-content");
+  for (i = 0; i < tabContent.length; i++) {
+      tabContent[i].style.display = "none";
   }
-  tabbuttons = document.getElementsByClassName("tab-button");
-  for (i = 0; i < tabbuttons.length; i++) {
-      tabbuttons[i].className = tabbuttons[i].className.replace(" active", "");
+
+  // Remove the active class from all tab buttons
+  tabButtons = document.getElementsByClassName("tab-button");
+  for (i = 0; i < tabButtons.length; i++) {
+      tabButtons[i].className = tabButtons[i].className.replace(" active", "");
   }
+
+  // Show the current tab content and add an active class to the button that opened the tab
   document.getElementById(tabName).style.display = "block";
   evt.currentTarget.className += " active";
 }
 
 function openSubTab(evt, subTabName) {
-  var i, subtabcontent, subtabbuttons;
-  subtabcontent = document.getElementsByClassName("sub-tab-content");
-  for (i = 0; i < subtabcontent.length; i++) {
-      subtabcontent[i].style.display = "none";
+  var i, subTabContent, subTabButtons;
+
+  // Hide all sub-tab content
+  subTabContent = document.getElementsByClassName("sub-tab-content");
+  for (i = 0; i < subTabContent.length; i++) {
+      subTabContent[i].style.display = "none";
   }
-  subtabbuttons = document.getElementsByClassName("sub-tab-button");
-  for (i = 0; i < subtabbuttons.length; i++) {
-      subtabbuttons[i].className = subtabbuttons[i].className.replace(" active", "");
+
+  // Remove the active class from all sub-tab buttons
+  subTabButtons = document.getElementsByClassName("sub-tab-button");
+  for (i = 0; i < subTabButtons.length; i++) {
+      subTabButtons[i].className = subTabButtons[i].className.replace(" active", "");
   }
+
+  // Show the current sub-tab content and add an active class to the button that opened the sub-tab
   document.getElementById(subTabName).style.display = "block";
   evt.currentTarget.className += " active";
 }
-
-// Set default tab to be open
-document.addEventListener("DOMContentLoaded", function() {
-  document.querySelector(".tab-button").click();
-});
