@@ -1,86 +1,109 @@
 /* General Styles */
 body {
-  font-family: Arial, sans-serif;
-  background: linear-gradient(to bottom, #3e2723, #000000); /* Dark brown to black gradient */
-  color: #fff;
+  font-family: 'Roboto', Arial, sans-serif;
+  background: linear-gradient(to bottom right, #1e3c72, #2a5298); /* Blue gradient */
+  color: #f3f3f3;
   margin: 0;
   padding: 0;
 }
 
+/* Hero Section */
 .hero {
   text-align: center;
-  padding: 50px 20px;
-  background-color: rgba(0, 0, 0, 0.5);
-  border-bottom: 2px solid #A9A9A9; /* Dark Grey */
+  padding: 60px 20px;
+  background: rgba(0, 0, 0, 0.6);
+  border-bottom: 4px solid #ffffff33; /* Semi-transparent white border */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
 .avatar {
-  width: 150px;
-  height: 150px;
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
   margin-bottom: 20px;
+  border: 3px solid #DAA520; /* Gold border */
 }
 
 .bordered {
-  border: 2px solid #A9A9A9; /* Dark Grey */
-  padding: 10px;
+  border: 3px solid #DAA520; /* Gold */
+  padding: 15px;
   display: inline-block;
   background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 15px; /* Rounded corners */
+  font-weight: bold;
 }
 
 .cta-button {
-  background-color: #DAA520; /* Gold */
+  background: linear-gradient(to right, #ff9900, #ffcc00); /* Gradient gold */
   color: #fff;
   border: none;
-  padding: 10px 20px;
+  padding: 12px 25px;
   cursor: pointer;
-  font-size: 16px;
-  margin-top: 20px;
-  transition: background-color 0.3s, transform 0.3s;
+  font-size: 18px;
+  border-radius: 25px; /* Fully rounded button */
+  transition: background 0.3s, transform 0.3s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .cta-button:hover {
-  background-color: #b8860b; /* Darker Gold */
-  transform: scale(1.05);
+  background: linear-gradient(to right, #cc7a00, #e6b800); /* Darker gold gradient */
+  transform: scale(1.1);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
 }
 
+/* Container and Tabs */
 .container {
   display: flex;
-  padding: 20px;
+  flex-wrap: wrap;
+  padding: 30px;
+  gap: 20px;
 }
 
 .tabs {
   display: flex;
   flex-direction: column;
-  margin-right: 20px;
-  background-color: #8B4513; /* Brown */
-  padding: 10px;
-  border: 1px solid #A9A9A9; /* Dark Grey */
+  flex: 1;
+  max-width: 300px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 15px;
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  border: 2px solid #ffffff33; /* Semi-transparent white */
 }
 
 .tab-button, .sub-tab-button {
-  background-color: #8B4513; /* Brown */
+  background: rgba(255, 255, 255, 0.2);
   color: white;
-  border: 1px solid #A9A9A9; /* Dark Grey */
-  padding: 10px;
-  cursor: pointer;
-  margin-bottom: 5px;
+  border: none;
+  padding: 15px;
+  margin-bottom: 10px;
   text-align: left;
-  transition: background-color 0.3s, transform 0.3s;
+  font-size: 16px;
+  border-radius: 10px; /* Rounded corners */
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .tab-button:hover, .sub-tab-button:hover {
-  background-color: #DAA520; /* Gold */
+  background: rgba(255, 255, 255, 0.4);
+  transform: translateX(5px);
+}
+
+.tab-button.active, .sub-tab-button.active {
+  background: linear-gradient(to right, #DAA520, #ffcc00); /* Gold gradient */
+  color: #333;
+  font-weight: bold;
   transform: scale(1.05);
 }
 
 .tab-content, .sub-tab-content {
   display: none;
-  padding: 10px;
-  border: 1px solid #A9A9A9; /* Dark Grey */
-  background-color: #fff;
+  padding: 20px;
+  border-radius: 15px; /* Rounded corners */
+  background: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
   color: #333;
   flex-grow: 1;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
   animation: fadeIn 0.5s;
 }
 
@@ -88,7 +111,54 @@ body {
   display: block;
 }
 
+/* Animations */
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Contact List */
+.contact-list {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-list li {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.contact-icons {
+  margin-right: 10px;
+  font-size: 20px;
+  color: #DAA520;
+}
+
+/* Skills and List Styling */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  padding: 8px 0;
+  border-bottom: 1px solid #DAA520;
+  font-size: 16px;
+}
+
+ul li:last-child {
+  border-bottom: none;
+}
+
+ul li i {
+  color: #DAA520;
+  margin-right: 10px;
+  font-size: 18px;
 }
