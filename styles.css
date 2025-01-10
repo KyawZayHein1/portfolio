@@ -1,93 +1,124 @@
+/* General Styles */
 body {
   font-family: Arial, sans-serif;
-  background: linear-gradient(to bottom, #3e2723, #000000); /* Dark brown to black gradient */
-  color: #fff;
   margin: 0;
   padding: 0;
+  background-color: #f4f4f4;
 }
 
 .hero {
   text-align: center;
   padding: 50px 20px;
-  background-color: rgba(0, 0, 0, 0.5);
-  border-bottom: 2px solid #A9A9A9; /* Dark Grey */
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .avatar {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  margin-bottom: 20px;
+  object-fit: cover;
 }
 
 .bordered {
-  border: 2px solid #A9A9A9; /* Dark Grey */
-  padding: 10px;
+  border-bottom: 2px solid #333;
   display: inline-block;
-  background-color: rgba(255, 255, 255, 0.1);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .cta-button {
-  background-color: #DAA520; /* Gold */
+  background-color: #007bff;
   color: #fff;
-  border: none;
   padding: 10px 20px;
-  cursor: pointer;
-  font-size: 16px;
-  margin-top: 20px;
-  transition: background-color 0.3s, transform 0.3s;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
 }
 
 .cta-button:hover {
-  background-color: #b8860b; /* Darker Gold */
-  transform: scale(1.05);
+  background-color: #0056b3;
 }
 
 .container {
-  display: flex;
+  max-width: 1000px;
+  margin: 20px auto;
   padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .tabs {
   display: flex;
-  flex-direction: column;
-  margin-right: 20px;
-  background-color: #8B4513; /* Brown */
-  padding: 10px;
-  border: 1px solid #A9A9A9; /* Dark Grey */
+  flex-wrap: wrap;
+  margin-bottom: 20px;
 }
 
-.tab-button, .sub-tab-button {
-  background-color: #8B4513; /* Brown */
-  color: white;
-  border: 1px solid #A9A9A9; /* Dark Grey */
-  padding: 10px;
+.tab-button {
+  background-color: #f1f1f1;
+  border: none;
+  padding: 10px 20px;
   cursor: pointer;
-  margin-bottom: 5px;
-  text-align: left;
-  transition: background-color 0.3s, transform 0.3s;
+  transition: background-color 0.3s;
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
 
-.tab-button:hover, .sub-tab-button:hover {
-  background-color: #DAA520; /* Gold */
-  transform: scale(1.05);
+.tab-button:hover {
+  background-color: #ddd;
 }
 
-.tab-content, .sub-tab-content {
+.tab-content {
   display: none;
-  padding: 10px;
-  border: 1px solid #A9A9A9; /* Dark Grey */
-  background-color: #fff;
-  color: #333;
-  flex-grow: 1;
-  animation: fadeIn 0.5s;
+  padding: 20px;
+  border-top: 1px solid #ccc;
 }
 
-.tab-content.active, .sub-tab-content.active {
+.tab-content.active {
   display: block;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+.contact-list {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-icons {
+  margin-right: 10px;
+}
+
+/* Sub-Tab Styles */
+.sub-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.sub-tab-button {
+  background-color: #f1f1f1;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.sub-tab-button:hover {
+  background-color: #ddd;
+}
+
+.sub-tab-content {
+  display: none;
+  padding: 20px;
+  border-top: 1px solid #ccc;
+}
+
+.sub-tab-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+.sub-tab-content.active {
+  display: block;
 }
