@@ -34,8 +34,8 @@ function openSubTab(evt, subTabName) {
 
 // Automatically set the default tab to open when the page loads
 document.addEventListener("DOMContentLoaded", () => {
-  const defaultTab = document.querySelector(".tab-button");
-  const defaultSubTab = document.querySelector(".sub-tab-button");
+  const defaultTab = document.querySelector(".tab-button.default");
+  const defaultSubTab = document.querySelector(".sub-tab-button.default");
   if (defaultTab) {
     defaultTab.click(); // Simulate a click to open the default tab
   }
