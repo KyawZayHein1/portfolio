@@ -2,7 +2,7 @@
 function openTab(evt, tabName) {
   // Hide all tab contents
   document.querySelectorAll(".tab-content").forEach((tab) => {
-    tab.style.display = "none";
+    tab.classList.remove("active");
   });
 
   // Remove the "active" class from all tab buttons
@@ -11,7 +11,7 @@ function openTab(evt, tabName) {
   });
 
   // Display the selected tab and mark the button as active
-  document.getElementById(tabName).style.display = "block";
+  document.getElementById(tabName).classList.add("active");
   evt.currentTarget.classList.add("active");
 }
 
@@ -19,7 +19,7 @@ function openTab(evt, tabName) {
 function openSubTab(evt, subTabName) {
   // Hide all sub-tab contents
   document.querySelectorAll(".sub-tab-content").forEach((subTab) => {
-    subTab.style.display = "none";
+    subTab.classList.remove("active");
   });
 
   // Remove the "active" class from all sub-tab buttons
@@ -28,14 +28,16 @@ function openSubTab(evt, subTabName) {
   });
 
   // Display the selected sub-tab and mark the button as active
-  document.getElementById(subTabName).style.display = "block";
+  document.getElementById(subTabName).classList.add("active");
   evt.currentTarget.classList.add("active");
 }
 
 // Automatically set the default tab to open when the page loads
 document.addEventListener("DOMContentLoaded", () => {
+  // Set the default tab and sub-tab to be visible when the page loads
   const defaultTab = document.querySelector(".tab-button.default");
   const defaultSubTab = document.querySelector(".sub-tab-button.default");
+  
   if (defaultTab) {
     defaultTab.click(); // Simulate a click to open the default tab
   }
