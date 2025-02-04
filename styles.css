@@ -162,3 +162,20 @@ ul li i {
   margin-right: 10px;
   font-size: 18px;
 }
+
+/* Social Links */
+.social-links {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.social-links a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #DAA520;
+  font-size: 20px;
+}
+
+.social-links a:hover {
+  color: #ffcc00;
+}
